@@ -23,6 +23,13 @@ body {
     font-size: 5em;
     color: #f1e8ca;
 }
+
+.display-3 {
+    font-family: Algerian, 'Arial Narrow', Arial, sans-serif;
+    font-size: 3em;
+    color: lightcyan;
+
+}
 .display-2 {
     font-family: 'Arial Narrow', Arial, sans-serif;
     font-size: 2em;
@@ -36,7 +43,13 @@ body {
     
 }
 
+p.input{
+    color: black;
+    border: 2px groove lightblue;
+    
+    background-color: lightblue;
 
+}
 
 .dontForget {
     color: blue;
@@ -61,5 +74,21 @@ body {
 
 .icon-white {
     color: floralwhite;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.control-label{
+    color: honeydew;
+}
+
+.card {
+    width: 18rem;
+    background-color: lightblue;
+    border: 3px groove steelblue;
+    margin: 4px 4px;
+    position: relative;
 }
 

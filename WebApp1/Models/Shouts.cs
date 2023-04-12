@@ -1,4 +1,6 @@
-﻿namespace WebApp1.Models
+﻿using System.Drawing;
+
+namespace WebApp1.Models
 {
     public class Shouts
     {
@@ -11,6 +13,7 @@
         public Shouts()
         {
             ShoutDate = DateTime.Now;
+            
         }
     }
 }

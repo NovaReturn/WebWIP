@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WebApp1.Models.Shouts>
+
+@{
+    ViewData["Title"] = "Wall of Shouts";
+}
+
+<head>
+   
+</head>
+<body>
+@foreach (var item in Model) 
+{
+    
+    <div class="container">
+        <div class="row justify-content-center" >
+            <div class=" col-sm-12 col-md-4 col-lg-3">
+                <div class="card">
+                    <div class="card-body" @*style="background-color: @Html.DisplayFor(modelItem => item.ShoutBgColor)"*@>
+                        <h4 class="card-title">
+                            @Html.DisplayFor(modelItem => item.ShoutName)
+                        </h4>
+                        <p class="card-text" @*style="color: @Html.DisplayFor(modelItem => item.ShoutTextColor)"*@>
+                            @Html.DisplayFor(modelItem => item.ShoutEntry)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+</body>

@@ -27,6 +27,13 @@ namespace WebApp1.Controllers
                           Problem("Entity set 'WebApplicationDbContext.Shout'  is null.");
         }
 
+        public async Task<IActionResult> Wallshout()
+        {
+            return _context.Shout != null ?
+                        View(await _context.Shout.ToListAsync()) :
+                        Problem("Entity set 'WebApplicationDbContext.Shout'  is null.");
+        }
+
         // GET: Shouts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -88,7 +95,7 @@ namespace WebApp1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ShoutEntry, ShoutDate, ShoutName    ")] Shouts shout)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ShoutEntry, ShoutDate, ShoutName")] Shouts shout)
         {
             if (id != shout.Id)
             {

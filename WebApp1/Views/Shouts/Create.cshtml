@@ -4,17 +4,19 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 class="display-3">Create a new Shout</h1>
 
-<h4>Shout</h4>
-<hr />
+
+<head>
+    
+</head>
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" >
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ShoutEntry" class="control-label"></label>
-                <input asp-for="ShoutEntry" class="form-control" />
+                <input asp-for="ShoutEntry" class="form-control" id="shoutMessage" oninput="previewShout(this)"/>
                 <span asp-validation-for="ShoutEntry" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -22,10 +24,29 @@
                 <input asp-for="ShoutName" class="form-control" />
                 <span asp-validation-for="ShoutName" class="text-danger"></span>
             </div>
+            @*<div class="form-group">
+                <label asp-for="ShoutBgColor" class="control-label"></label>
+                <input asp-for="ShoutBgColor" class="form-control" id="colorInput" type="color"/>
+                <span asp-validation-for="ShoutBgColor" class="text-danger"></span>
+               
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+    </div>
+    <div class="col-md-4">
+        <p class="input" id="shoutPreview" >Message Preview</p>
+        <script>
+            function previewShout(message){
+                document.getElementById('shoutPreview').innerText = message.value;
+            }
+            //function selectColor(){
+            //    let userColor = document.getElementById('colorInput');
+            //    //change the preview to display the new bg color
+            //    document.getElementById('shoutPreview').backgroundColor = color.value;
+            //}
+        </script>
     </div>
 </div>
 
